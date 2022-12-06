@@ -1,0 +1,149 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <app-sidebar moduleName="mahasiswa"> </app-sidebar>
+
+    <div class="content-wrapper">
+        <div class = "content-header">
+            <div class="content-fluid">
+                <div class="row mb-2 ">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 test-dark">mahasiswa </h1>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <ol class="breadcrumb floar-sm right">
+                            <li class="breadcrumb-item"> <a href="/dashboard">Home</a></li>
+                            <li class="breadcrumb-item active">Mahasiswa</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Main row -->
+                <div class="row">
+                    <button id="tambahButton" class="btn btn-primary mb-2" (click)="showTambahModal()">
+                        <i class="fa fa-plus"></i>
+                        Tambah
+                    </button>
+                    <div class="table-responsive">
+                        <table id="table1" class="table table-hover table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Tempat, Tanggal Lahir</th>
+                                    <th>JP</th>
+                                    <th>Alamat</th>
+                                    <th>Status</th>
+                                    <th>Tahun Masuk</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.row (main row) -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+</section>
+</div>
+<app-footer></app-footer>
+</div>
+
+
+
+
+
+
+<div class="modal" id="tambahModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mahasiswa Baru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>NIM</label>
+                <input type="text" id="nimText" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Nama</label>
+                <input type="text" id="namaText" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Jenis Kelamin</label>
+                <select id="jenisKelaminSelect" class="form-control">
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Tempat Lahir</label>
+                <input type="text" id="tempatLahirText" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Tanggal Lahir (yyyy-mm-dd)</label>
+                <input type="text" id="tanggalLahirText" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Jurusan / Prodi</label>
+                <select id="jpSelect" class="form-control">
+                    <option value="SI/SI">SI/SI</option>
+                    <option value="TI/TI">TI/TI</option>
+                </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Alamat</label>
+                <input type="text" id="alamatText" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Status Pernikahan</label>
+                <select id="statusNikahSelect" class="form-control">
+                    <option value="Belum Menikah">Belum Menikah</option>
+                    <option value="Menikah">Menikah</option>
+                    <option value="Duda">Duda</option>
+                    <option value="Janda">Janda</option>
+                </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <label>Tahun Masuk</label>
+                <input type="text" id="tahunMasukText" class="form-control"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="postRecord()">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
