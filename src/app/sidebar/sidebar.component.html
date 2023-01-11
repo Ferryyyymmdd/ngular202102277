@@ -14,7 +14,7 @@
           <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">FERRY SAPTAWAN</a>
+          <a href="#" class="d-block">Ferry Saptawan</a>
         </div>
       </div>
 
@@ -65,10 +65,26 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a [routerLink]="['/forex']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'forex' ? 'active' : ''}}">
+              <i class="nav-icon far fa-money-bill-alt"></i>
+              <p>
+                Forex
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/mahasiswa" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Mahasiswa (non router)
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/cuaca']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'cuaca' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-cloud-rain"></i>
+              <p>
+                CUACA
               </p>
             </a>
           </li>
