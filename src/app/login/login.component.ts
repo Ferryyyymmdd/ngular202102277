@@ -12,19 +12,19 @@ declare const $ : any;
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private renderer: Renderer2, private router : Router, private http : HttpClient) {
-    this.renderer.addClass(document.body, "login-page");
-   }
+  constructor(private router : Router, private http : HttpClient){
+
+  }
 
   ngOnInit(): void {
   }
 
-  showperingatanModal(Message:String):void{
+  showPeringatanModal(message: string): void{
     $("#peringatanModal").modal();
-    $("#pm_message").html(Message);
-    }
+    $("#pm_message").html(message);
+  }
 
-  signIn():void{
+  signIn(): void{
     console.log("signIn()");
 
     var userId = $("#idText").val();
@@ -33,13 +33,13 @@ export class LoginComponent implements OnInit {
     var password = $("#passwordText").val();
     password = encodeURIComponent(password);
 
-    var url = "http://stmikpontianak.net/011100862/login.php" + 
-    "?id=" + userId + 
-    "&password=" + password;
+    var url = "https://stmikpontianak.net/011100862/login.php" +
+    "?id=" + userId +
+    "&password=" +password;
 
-    console.log("url : " + url);
+  console.log("url : " + url);
 
-    this.http.get(url)
+  this.http.get(url)
     .subscribe((data : any) => {
       console.log(data);
 
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
       if (row.idCount != "1")
       {
-        this.showperingatanModal("Id atau password tidak cocok");
+        this.showPeringatanModal("Id atau Password tidak cocok");
         return;
       }
 
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(["/dashboard"])
     });
-  }
+  } 
 
-  }
+}
 
